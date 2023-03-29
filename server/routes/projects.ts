@@ -6,7 +6,12 @@ const db = require('../db')
 
 router.get('/', async (req, res) => {
   const projects = await db.getProjects()
+  console.log(projects)
   res.json(projects)
 })
+
+// router.get('/projects/:id', async (req, res) => {
+//   const projectById = await db.getProjectsById(id)
+// })
 
 export default router
