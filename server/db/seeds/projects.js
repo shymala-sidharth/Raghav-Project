@@ -12,6 +12,8 @@ exports.seed = async function (knex) {
       hero_img: '/images/BaB-21.png',
       hero_img_alt: 'Pillar-Design-Logo',
       short_description: 'This is a short description of the project',
+      project_description:
+        'This a longer, more drawn out, extensive, exhaustive, detailed, yet commically long description of the project',
     },
   ])
 }
