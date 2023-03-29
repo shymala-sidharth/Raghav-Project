@@ -7,8 +7,8 @@ const server = express()
 server.use(express.json())
 server.use(express.static(join(__dirname, 'public')))
 
-server.use('/projects', projects)
-server.use('/main', main)
+server.use('/v1/projects', projects)
+server.use('/v1/main', main)
 
 // this is landing on the main page
 server.get('*', (req, res) => {
