@@ -5,6 +5,7 @@
   "repository": "https://github.com/dev-academy-challenges/react-boilerplate.git",
   "main": "server/index.js",
   "scripts": {
+    "knex": "knex --knexfile ./server/db/knexfile.js",
     "start": "run-p webpack server",
     "dev": "run-p client:watch server:watch",
     "webpack": "webpack --config client/webpack.config.js",
@@ -63,6 +64,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "2.6.1",
     "react": "^18.0.2",
+    "superagent":"7.1.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
     "ts-jest": "^29.0.3",
@@ -72,6 +74,9 @@
   },
   "dependencies": {
     "express": "^4.17.2",
+    "knex": "^2.4.2",
+    "sqlite3": "^5.1.6",
+    "superagent": "^8.0.9",
     "ts-node": "^10.9.1"
   },
   "prettier": {
