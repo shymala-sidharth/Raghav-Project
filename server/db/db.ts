@@ -15,6 +15,14 @@ export function getProjects(db = connection): Promise<Project[]> {
   return db('projects').select()
 }
 
+export function getProjectsById(
+  id: number,
+  db = connection
+): Promise<ProjectDetails[]> {
+  console.log(id)
+  return db('project_details').where({ project_id: id }).select()
+}
+
 // function getProjectsById(id, db = connection): Promise<ProjectDetails[]> {
 //   return db('projects').where('id', id).first()
 // }
