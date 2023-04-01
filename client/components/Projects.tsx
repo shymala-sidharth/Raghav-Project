@@ -14,20 +14,20 @@ function Projects() {
       .catch((err) => {
         setErr(err.message)
       })
-  })
+  }, [])
 
   console.log(allProjects)
   return (
     <>
       <h1> My Projects</h1>
       <div>
-        {allProjects.map(
-          ({ id, project_name, hero_img, hero_img_alt, short_description }) => {
+        {allProjects?.map(
+          (project) => {
             return (
-              <div key={id}>
-                <h3>{project_name}</h3>
-                <p>{short_description}</p>
-                <img src={hero_img} alt={hero_img_alt} />
+              <div key={project.id}>
+                <h3>{project.project_name}</h3>
+                <p>{project.short_description}</p>
+                <img src={project.hero_img} alt={project.hero_img_alt} />
               </div>
             )
           }

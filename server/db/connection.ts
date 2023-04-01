@@ -5,4 +5,6 @@ type Environment = 'development' | 'production' | 'test'
 const env = (process.env.NODE_ENV as Environment) || 'development'
 const connection = knex(config[env])
 
+const db = knex(config.development)
+
 export default connection

@@ -9,6 +9,7 @@
 // const connection = knex(config[environment])
 
 import connection from './connection'
+
 import { Project, ProjectDetails } from '../../models/Project'
 
 export function getProjects(db = connection): Promise<Project[]> {
