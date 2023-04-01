@@ -76,6 +76,10 @@
   "dependencies": {
     "express": "^4.17.2",
     "knex": "^2.4.2",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "save": "^2.9.0",
     "sqlite3": "^5.1.6",
     "superagent": "^8.0.9",
     "ts-node": "^10.9.1"
