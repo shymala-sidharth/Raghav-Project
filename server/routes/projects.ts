@@ -1,20 +1,33 @@
 import express from 'express'
-import { getProjectsById, getProjects } from '../db/db'
+import {
+  getProjectsById,
+  getProjects,
+  getProjectsAndDescriptions,
+} from '../db/db'
 const router = express.Router()
 // const db = require('../db/db')
 
 //router.get  // similar to home page but for the all projects page to show all projects
 
 router.get('/', async (req, res) => {
-  const projects = await getProjects()
-  console.log(projects)
-  res.json(projects)
+  try {
+    const projects = await getProjects()
+    res.json(projects)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Cannot get projects' })
+  }
 })
 
 router.get('/:id', async (req, res) => {
   try {
     const projectId = Number(req.params.id)
-    const viewProject = await getProjectsById(projectId)
+    console.log(projectId)
+    const project = await getProjectsById(projectId)
+    console.log(project)
+    const descripiton = await getProjectsAndDescriptions(projectId)
+    console.log(descripiton)
+    const viewProject = { project, descripiton }
     // res.status(200).json('ok')
     res.json(viewProject)
   } catch (error) {
