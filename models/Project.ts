@@ -12,4 +12,5 @@ export interface ProjectDetails {
   id: number
   imgs: string
   img_alt: string
+  description: string
 }

@@ -23,6 +23,12 @@ export function getProjectsById(
   return db('project_details').where({ project_id: id }).select()
 }
 
-// function getProjectsById(id, db = connection): Promise<ProjectDetails[]> {
-//   return db('projects').where('id', id).first()
-// }
+export function getProjectsAndDescriptions(
+  id: number,
+  db = connection
+): Promise<ProjectDetails> {
+  return db('project_details')
+    .join('projects', 'project_details.project_id', 'projects.id')
+    .where('project_details.project_id', id)
+    .select('project_description')
+}
